@@ -2,7 +2,7 @@
 
 Date: 2020-05-03
 
-Focal point: Tom Kralidis
+Focal point: [Tom Kralidis](https://github.com/tomkralidis)
 
 ## Introduction
 
