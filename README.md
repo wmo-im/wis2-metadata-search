@@ -1,6 +1,7 @@
 # WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot project
 
 Date: 2020-05-03
+
 Focal point: Tom Kralidis
 
 ## Introduction
