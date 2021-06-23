@@ -1,6 +1,12 @@
 == Standards
 
+The standards put forth in this pilot are a clean break from WIS 1.0 standards (OAI-PMH, SRU, ISO 19115/19139)
+in order to lower the barrier to entry/implementation for a vast range of users/actors.
+
 === Data
+
+Although this pilot is focused on discovery metadata, it is important to outline core baseline
+standards that are used and / or extended throughout this pilot.
 
 ==== GeoJSON
 
@@ -18,7 +24,7 @@ extensions, as described below.
 
 The SpatioTemporal Asset Catalog (STAC) footnote:[https://stacspec.org] specification provides a common language to describe a range of geospatial information, so it can more easily be indexed and discovered. A 'spatiotemporal asset' is any file that represents information about the earth captured in a certain space and time. 
 
-STAC provides the following metadata models:
+The core STAC specification provides the following metadata models:
 
 * Item: the lowest granularity of STAC metadata (we can imagine metadata about a single file)
 * Catalog: a list of Items or child Catalogs
