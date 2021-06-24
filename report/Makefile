@@ -1,4 +1,4 @@
-FILE_BASENAME=wis2-metadata-search-engineering-report
+FILE_BASENAME=wis2-metadata-search-report
 
 html:
 	asciidoctor --trace -o ${FILE_BASENAME}.html index.adoc

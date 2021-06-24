@@ -1,9 +1,8 @@
-# WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot project Engineering Report
+# WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot project Report
 
 ## Overview
 
-This directory contains the engineering report and provides
-instructions for managing the document.
+This directory contains the report and provides instructions for managing the document.
 
 ### Dependencies
 
@@ -15,9 +14,9 @@ Link checking is managed with [asciidoc-link-check](https://www.npmjs.com/packag
 
 ```bash
 # create HTML (single page)
-asciidoctor --trace -o wis2-metadata-search-engineering-report.html index.adoc
+asciidoctor --trace -o wis2-metadata-search-report.html index.adoc
 # create PDF
-asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o wis2-metadata-search-engineering-report.pdf index.adoc
+asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o wis2-metadata-search-report.pdf index.adoc
 ```
 
 # check links
