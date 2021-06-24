@@ -34,10 +34,13 @@
 toc::[]
 <<<
 
-#include::subject.adoc[]
-#include::executive-summary.adoc[]
-#include::references.adoc[]
-#include::terms-and-definitions[]
+include::subject.adoc[]
+
+include::executive-summary.adoc[]
+
+include::references.adoc[]
+
+include::terms-and-definitions.adoc[]
 
 include::introduction.adoc[]
 
@@ -51,5 +54,7 @@ include::architecture.adoc[]
 #include::results.adoc[]
 #include::discussion.adoc[]
 #include::conclusion.adoc[]
-#include::annex-a-revision-history.adoc[]
+
+include::annex-a-revision-history.adoc[]
+
 #include::annex-b-bibiography.adoc[]

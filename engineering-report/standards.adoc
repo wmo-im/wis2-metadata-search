@@ -30,7 +30,7 @@ standards that are used and / or extended throughout this pilot.
 
 ==== GeoJSON
 
-GeoJSON (RFC 7946 footnote:[https://datatracker.ietf.org/doc/html/rfc7946]is a format for
+GeoJSON (RFC 7946 footnote:[https://datatracker.ietf.org/doc/html/rfc7946]) is a format for
 encoding a variety of geographic data structures footnote:[https://geojson.org].  In the
 geospatial community, GeoJSON typically represents vector (or feature) data.  GeoJSON is a dialect
 of JSON footnote:[https://www.json.org].

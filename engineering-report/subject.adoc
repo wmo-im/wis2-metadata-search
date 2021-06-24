@@ -1,0 +1,6 @@
+== Subject
+
+The subject of this document is the WMO WIS 2.0 Discovery Metadata exchange,
+harvesting and search pilot project.  The document provides an overview of
+use cases, requirements, standards, architecture, testing and recommendations
+in support of modernizing WIS 2.0 metadata and search workflows.

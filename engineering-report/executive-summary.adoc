@@ -1,0 +1,18 @@
+== Executive Summary
+
+TODO
+
+=== Contributors
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+^|Name  ^|Affiliation
+| Tom Kralidis (editor) | Meteorological Service of Canada (MSC)
+| Jeremy Tandy | UK Met Office
+| Chris Little | UK Met Office
+| Steve Olson | National Oceanographic and Atmospheric Administration (NOAA)
+| Chris Holmes | Planet Labs
+| Douglas Fils | Consortium for Ocean Leadership
+|===
+
