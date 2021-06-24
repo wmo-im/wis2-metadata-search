@@ -1,116 +1,39 @@
 == WIS 2.0
 
-WIS 2.0 aims to reduce the technical barriers to contribution of data, by
+=== Principles
 
+WIS 2.0 puts forth the following principles (those applying to this pilot are in **bold**):
 
-* lower the barrier to entry
-* FAIR data principles
-* Web architecture/hypermedia
-* webby/of the web
-* search engine friendly
+* *Principle 1: WIS 2.0 adopts Web technologies and leverages industry best practices and open standards*
+* *Principle 2: WIS 2.0 uses Uniform Resource Locators (URL) to identify resources*
+* *Principle 3: WIS 2.0 prioritizes use of public telecommunications networks (i.e. Internet) when publishing digital resources*
+* *Principle 4: WIS2.0 requires provision of Web service(s) to access or interact with digital resources (e.g. data, information, products) published using WIS*
+* Principle 5: WIS 2.0 encourages NCs and DCPCs to provide 'data reduction' services via WIS that process 'big data' to create results or products that are small enough to be conveniently downloaded and used by those with minimal technical infrastructure
+* *Principle 6: WIS 2.0 will add open standard messaging protocols that use the publish-subscribe message pattern to the list of data exchange mechanisms approved for use within WIS and GTS*
+* Principle 7: WIS 2.0 will require all services that provide real-time distribution of messages to cache/store the messages for a minimum of 24-hours, and allow users to request cached messages for download
+* Principle 8: WIS 2.0 will adopt direct data exchange between provider and consumer
+* Principle 9: WIS 2.0 will phase out the use of routing tables and bulletin headers
+* *Principle 10: WIS 2.0 will provide a Catalogue containing metadata that describes both data and the service(s) provided to access that data*
+* *Principle 11: WIS 2.0 encourages data providers to publish metadata describing their data [EF1] and Web services in a way that can be indexed by commercial search engines*
 
+=== User stories
 
+As part of requirements gathering footnote:[https://github.com/wmo-im/wcmp/issues/107], the following user stories provide a
+description of features that are relevant to WIS 2.0 metadata and search, and are cast from a user perspective:
 
+* As an NWP center operator I want to quickly and easily publish information about the data that my centre provides and update it as needed in a (semi)automated way using the information that I already have in my vast databases so that I can concentrate on my core business
+* As the leader of a forecasting team of a national meteorological institution, I would like to be able to find more sources of data that might be relevant/useful for the work of my team, notably NWP and satellite imagery so that we could further improve our predictions. That should work for unprocessed outputs of a prediction model or a satellite as well as for services that offer more sophisticated access to the data, e.g. tailing
+* As an entrepreneur (start-up) that provides (wants to provide) tailored weather information I want to be able to find services (free or commercial) that provide meteorological data in a cloud or even better, provide customizable processing of such data - to be able to build my own service on top of it. And I want to be able to find out if a new such service appears or if an existing one changes its abilities so that my company can keep on advancing
+* As a software developer (working for a national met center or a private company), I would like to find a relevant technical description of the service (API) that my boss wants me to integrate with, so that the declared interoperability becomes reality
+* As a user I would like to search for real-time observations for a given time and geographical area of interest so that I can have up to date information on weather for my city
+* As a web developer I would like to access to a search API that provides easy to read documentation, examples, and a simple, intuitive RESTful API with JSON so that I can integrate into my web application quickly
+* As a GIS professional, I would like to search for weather/climate/water data from my GIS Desktop support tool so that I can integrate forecast data into my workflow
 
-WIS 2.0 aims
-trivially easy for data owners to publish metadata that describes their data holdings.
+The following WIS 2.0 marketing video footnote:[https://gisc.dwd.de/wis2.0/WIS_2.0_final.mp4] adds the following user stories:
 
+* As an everyday user, I would like to find easy to understand and precise weather data so that I can plan to have people over for an outdoor BBQ on a nice day
+* As a smart home owner, I would like access to frequently updated data so that I can keep my smart home monitoring up to date
+* As a weather specialist, I would like to access weather data in native data formats and subscribe to product updates, so that I can provide tailor made weather services to my users
 
-As such, WIS 2.0 leverages native Web architecture and adopts the "webby" practices
-outlined above. 
-
-OARec aims to provide a "webby" API for search and discovery of spatiotemporal data.
-
-In parallel, STAC has been developed in line with the same "webby" principles.
-
-Although we expect many users to discover data via search engines, there are many reasons that WIS2 needs it’s own definitive catalogue. 
-
-So for a Web-native WIS2, the easiest way to for data publishers to provide metadata that can be harvested into the definitive WIS catalog (or indexed by search engines) is by publishing static files – like a STAC static catalog. 
- 
-STAC recommends providing HTML pages for humans alongside the JSON documents. With embedded (schema.org) markup for search engine crawlers. 
-
-So – a ‘bare bones’ approach would be to dump description files (JSON plus HTML) with a top-level HTML file that humans and search engine crawlers can use as an entry point, allowing the tree of files to be traversed.
- 
-Of course, if data owners decide not to publish HTML with embedded schema.org markup alongside their STAC catalog, then (i) it won’t be easy for humans to use, and (ii) search engines won’t crawl it, so their data won’t be discoverable via the search engines, which means that (some) users won’t find it at all. But at least their data will be discoverable via the “WIS search” (more on that below).
- 
-A more sophisticated data owner could provide an OARec end-point to browse and discover its data. This should be providing (schema.org friendly) HTML pages for humans – so we’re all good here.
-
-Either ‘bare bones’ or OARec approach would be able to be plugged into, say, Google’s Structured Data Testing Tool and browsed from there to determine how it’s seen by a search engine.
- 
-We can conclude that WIS2 should support harvesting “metadata” from data owners in multiple ways. For example: either as STAC or OARec. (anything else?) – This should help ensure we get the widest possible traction with the community.
- 
-There seems little point in having GISCs crawl the data owner’s HTML pages, because these may or may not exist. Why make things more complicated than needed – we’re already supporting two machine-readable formats. Leave the HTML pages for the search engine crawlers!
-
-All NCs and DCPCs will be required to publish on the Web metadata describing their data holdings for GISCs to incorporate into the definitive WIS Catalog.
-
-It’s important to note here that data is the “first class citizen” – operations on the data (e.g. services) come second. Following OGC good practice, metadata records about data will reference services related to those data, e.g. data access API or subscription end-point. In this way, a user first finds the data they’re interested in, then the services through which they can interact with that data.
- 
-For the sake of argument, let’s say that the data owner registers their catalog with their affiliated GISC – using whatever process and authorisation needed. Registration will need to identify what kind of catalog resource the data owner is registering (unless this can be done automatically, e.g. using the API or STAC version metadata?) and, for catalogs containing sub-catalogs, the depth in the hierarchy where GISCs should stop harvesting.
- 
-The GISC could then crawl those catalog resources and import all the catalog/collection/item records into the GISC’s local catalog. Lots of implementation choices here – from bespoke solutions to elasticsearch. (An alternative might be for the GISC to subscribe to a MQP topic for the data owner’s catalog that pushes a notification whenever the catalog is updated)
-
-[At point of registration of a dataset, need to define the number of levels within a catalog structure to delve]
-
-[Where GISCs provide complementary / additional mechanisms to for subscription or access to data, they may need to add extra “associations” properties to the OARec Item record. For example, if a GISC offers a local end-point to subscribe to updates about the dataset. The data publisher wouldn’t know about such a service at the time they wrote their metadata, so the GISC would need to mix-in these extra properties. In such cases, it’s important that users can always distinguish the canonical end-points provided by the data publisher.]
- 
-Each GISC will aggregate metadata records from their affiliated centres, and enable consumers to search these record. 
-GISCs will harvest metadata from NCs and DCPCs (I) as static files e.g. STAC, (II) from OARec end-point  , or (III) according to locally agreed arrangements. 
-GISCs will provide an OARec end-point to enable users to search all content provided by their affiliated centres. Furthermore, GISCs will also enable users to search content provided by centres affiliated to other GISCs. 
-There are two implementation choices here: 
-1.	Aggregation: every GISC harvests the records from peer GISCs OARec end-points , so every GISC has a copy of the entire catalog [robust and resilient, but adds complexity of harvesting – albeit that each GISC will likely already be harvesting from OARec end-points of their affiliated centres] 
-2.	Distributed search: GISCs offer users an option to "search other GISCs", in which case the GISC proxies the user's search request to (preconfigured) set of OARec end-points operated by peer GISCs [simpler (meta)data management for GISCs – only managing metadata from their affiliated centres, potentially brittle as no resilience, needs a fully meshed "all GISCs talk to all GISCs" architecture, needs to filter out potential duplicate records retrieved from multiple sources]
-Determining which option is right for WIS2 needs further discussion.
-
-
- 
-An implication of this approach (and either implementation) is that we would need to keep the catalog for each GISC’s Area of Responsibility partitioned.
- 
-
- 
- 
-Then how do users discover WIS data holdings?
- 
-Each GISC should provide an OARec end-point, allowing users to traverse, browse and search the entire WIS catalog, providing machine-readable GeoJSON alongside (schema.org friendly) HTML pages. Search engines can crawl and index the GISC’s HTML pages to further aid discovery.
- 
-Maybe in future we might suggest alternative, or additional, APIs for search. This should be achievable so long as the GISC implementation decouples how the catalog/collection/item records are persisted from the API exposed to users. 
-
-A note on OGC-API Records and STAC
-DRAFT OGC API - Records - Part 1: Core 
-SpatioTemporal Asset Catalog (STAC); also see STAC Index
-
-Both OGC-API Records (OARec) and STAC provide a means to expose metadata about spatiotemporal data and provide an API that can be used to search, browse, and navigate through collections of spatiotemporal data.
-But can OGC-API Records provide STAC compatible responses? Both cover the same space, including the concepts of catalogues/collections and items - albeit in different ways.
-OGC-API Records /collections, /collections/{collectionId}, and /collections/{collectionId}/items provide the information in the STAC Catalog (or STAC Collection). Actually, the STAC Catalog seems to map best to /collections/{collectionId}/items - assuming you include the summary information for the Collection in the .../items response too. And just like STAC, an OGC-API Records Collection can refer to other Collections (e.g. sub-catalogs) in its list of items, enabling deeply structured catalogues to be described. /collections also describes a list of collections, but this just describes a flat list of all the known collections. It's the navigation hypermedia in <links> that can be used to define the catalog structure (e.g. root, parent, child, self).
- 
-OGC-API Records /collections/{collectionId}/items/{itemId} maps to STAC Item. That one's pretty easy.
- 
-Example: compare STAC Index (https://stacindex.org) to OGC-API Records
- 
-https://stacindex.org/catalogs ... like /collections
-https://stacindex.org/catalogs/planet-disaster-data#/ ... describing a specific catalog and its children, combination of /collections/{collectionId} and /collections/{collectionId}/items 
-
-You then recurse through a couple of levels of subcatlogs with URLs like https://stacindex.org/catalogs/planet-disaster-data#/{uuid} until you get to a catlog that includes items
-
-Items have URLs like https://stacindex.org/catalogs/planet-disaster-data#/item/{uuid} ... these map to /collections/{collectionId}/items/{itemId} ... and these are the resources that provide the links to the spatial data assets themselves.
- 
-OGC-API Records and STAC use different, but overlapping sets of attributes for describing the content in JSON. There don’t appear to be any conflicts where STAC and OGC-API Records use the same attribute with different semantics. But, the key point is that they both return GeoJSON (application=geo+json) making it impossible to use content negotiation to choose one or other representation.   
- 
-An option might be a "mix-in" approach, where the GeoJSON response includes attributes for both OGC-API Records and STAC. This may be problematic from a JSON Schema validation point of view. Even so, it is still difficult to reconcile the different approach to how the information is structured into different resources (see example above).
-
-The current recommended approach (as per this comment) is to use OARec and STAC for different purposes, even though they are similar in many ways. So there’s no need to mix them up.  
- 
-It’s conceivable you could offer a STAC end-point side-by-side with a OARec end-point if you felt that your user community would benefit; each end-point offering a different method to traverse/browse/discover your datasets.
-STAC provides a mechanism to traverse/browse a collection of file-based data resources via HTML with a rich(ish) UI including maps etc. In other words, STAC is good for more finely grained data resources exposed as collection of assets, whereas OARec is good for discovering collections of collections.
-For example, a collection could be:
-•	All the GRIB files from a particular model run
-•	All the BUFR files for SYNOPs from Canada
-Alternative methods enabling users to interactively query the collection might be OGC-API Features, or OGC-API EDR.
-[The alternative is to simply put a bunch of files in a directory and hope the user can make sense of the filenames. Should we make it a requirement for data publishers to provide a mechanism to traverse through individual files – or simply a recommendation? Forcing this may be a blocker for some WMO Members.]
-Importantly, the collection is the “atomic unit” that you want to be able to discover via something like WIS. Once discovered, you can subscribe to changes in the collection (e.g. using AMQP), or you can jump into the dataset to pull out the bits you need – whether that’s by browsing STAC or querying an OGC-API endpoint. 
-The Meteorological Service of Canada provide the following example using their 15KM global model (GDPS).
-•	OARec level discovery metadata record of the GDPS collection with link relations to a STAC collection
-•	the STAC collection itself with each product as an item:
-o	OARec record: https://github.com/OGCMetOceanDWG/ogcapi-records-metocean-bp/blob/master/core/examples/msc.gdps.json
-o	Which refers to the STAC listing: https://api.weather.gc.ca/stac/msc-datamart/model_gem_global 
-In other words, from an OARec perspective, the discovery metadata record is the item, linking to the STAC collection of items of the actual products.  In STAC, the product is the item.
-From a search perspective, OARec would provide search for the existence of collections, and STAC would provide search WITHIN the existence of those collections.
+Given the above, we see a variety of users/actors to which WIS 2.0, driving the need for low barrier, ubiquitous and
+efficient discovery, visualization, access of weather/climate/water (real-time, near real-time, archive, etc.) data.

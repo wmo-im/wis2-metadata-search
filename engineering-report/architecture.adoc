@@ -1,2 +1,88 @@
 == Architecture
 
+=== Considerations
+
+Given the WIS 2.0 principles, requirements, standards and current design patterns, the following
+describes envisioned workflows of WIS 2.0 in the context of metadata search and harvesting.
+
+We consider the following catalogue options:
+
+* the browser as the catalogue: here, browsers utilize mass market search engines as the gateway
+  to low barrier discovery.  This pattern works without a dedicated WIS catalogue per se, and also
+  means discovery metadata would not need to be duplicated/harvested across each GISC, with the idea
+  that search engines will harvest from the closest point to the authoritative source
+* the canonical WIS catalogue: given WIS 2.0 will not (and should not!) control or enforce search
+  engine behaviour, there is a need to provide a resource discovery experience without the various
+  intricacies or "value add" typically provided by search engines.  Hence a canonical WIS 2.0
+  Catalogue will be recognized by WMO, approved by permanent representatives (PRs).  The canonical
+  WIS 2.0 Catalogue would provide a search API and metadata encodings consistent with the standards
+  described in <<Standards>>, and thereby can equally be harvested by search engines just the same.
+
+The main difference between the above options is whether providers publish descriptions of resources
+via static methods or APIs.
+
+In either option, providing HTML will facilitate search engine integration, while lower level encodings/formats
+will facilitate machine to machine workflow.  In addition, either option will be required for NCs and
+DCPCs to publish their discvovery metadata for GISCs to harvest into the canonical WIS Catalogue.
+
+==== Resource-oriented architecture
+
+In alignment with RESTful patterns, it is important to note that data is the "first class citizen".
+Operations on the data (e.g. services/APIs) are secondary. Following standards-based practices (such
+as the OGC API efforts), metadata records about data will reference services related to those data.
+In this approach, the user first finds the data they are interested in, then can bind to those services
+via the associated link relations.
+
+==== Publication
+
+===== Static catalog publication
+
+* provide discovery metadata in JSON
+* optionally provide lower granularity metadata (i.e. products) in JSON for traversal
+* optionally augment all metadata by providing alternate representations in HTML with SEO constructs
+  such as schema.org footnote:[https://schemas.org] and/or JSON-LD footnote:[https://json-ld.org]
+* register static catalog landing page to GISC for harvest/ingest
+
+===== API provisioning
+
+* provide discovery metadata in JSON
+* make discovery metadata available via search API
+* register API landing page to GISC for harvest/ingest
+
+==== GISC harvesting (aggregation)
+
+In either case, GISCs could support push or pull mechanisms for metadata ingest/harvesting:
+
+1. pull: traversing the catalogue or API resources and ingest metadata into the GISC local catalogue
+2. push: subscribe to a given NC/DCPC for notifications of resource updates
+
+We also have to consider harvesting depth (hops) as an option for providers to specify when registering
+their resource catalogues to a GISC.
+
+The primary means of GISC harvesting would be via OARec (API) or STAC (static catalogue).  A third option
+is possible subject to locally agreed upon arrangements between providers and GISCs.
+
+==== Search
+
+GISCs will provide an OARec endpoint to enable users to search all content provided by the local GISC or
+content from other GISCs.  The aggregation will facilitate a fulsome search of all WIS 2.0 resources as
+harvested by/between given GISCs.
+
+There is another option to consider: distributed search.  Here, metadata stays with each relevant GISC
+and search requests perform realtime searches against remote GISCs.  While this results in simplified
+metadata management, it also presents issues concerning network latency/failure, as well as providing
+meaningful sets of search results (each GISC would potentially have various relevance algorithms depending
+on their Catalogue tooling or backend database or document store).  This requires further discussion.
+
+==== Standards implementation approach
+
+
+
+
+
+
+
+
+
+
+

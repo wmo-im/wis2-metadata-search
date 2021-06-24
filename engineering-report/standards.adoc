@@ -1,18 +1,39 @@
 == Standards
 
 The standards put forth in this pilot are a clean break from WIS 1.0 standards (OAI-PMH, SRU, ISO 19115/19139)
-in order to lower the barrier to entry/implementation for a vast range of users/actors.
+in order to lower the barrier to entry/implementation for a vast range of users/actors.  The WIS 1.0 standards
+for search and metadata, applying a Service-Oriented Architecture (SOA), while applicable for their purpose at
+the time, present the following challenges in current web architecture:
+
+* complex machinery and service provisioning is required for crawling/traversing resources
+* challenging for web developers to implement
+* challenging for mainstream Web integration
+
+Current web architecture is primarily rooted in Representational State Transfer (REST) footnote:[https://datatracker.ietf.org/doc/html/rfc7231]
+which has the following features:
+
+* HTTP verbs (GET/PUT/POST/DELETE/OPTIONS/PATCH)
+* HTTP status codes (200, 201, 404, etc.)
+* URIs to identify resources
+* Content negotiation (media types)
+* Stateless
+
+REST puts a focus on Resource Oriented Architecture (ROA).
+
+The following standards are well positioned to meet WIS 2.0 principles, consistent with current web architecture
+and RESTful design patterns.
 
 === Data
 
-Although this pilot is focused on discovery metadata, it is important to outline core baseline
+Although this pilot is primarily focused on discovery metadata, it is important to outline core baseline
 standards that are used and / or extended throughout this pilot.
 
 ==== GeoJSON
 
 GeoJSON (RFC 7946 footnote:[https://datatracker.ietf.org/doc/html/rfc7946]is a format for
 encoding a variety of geographic data structures footnote:[https://geojson.org].  In the
-geospatial community, GeoJSON typically represents vector (or feature) data.
+geospatial community, GeoJSON typically represents vector (or feature) data.  GeoJSON is a dialect
+of JSON footnote:[https://www.json.org].
 
 GeoJSON is an extremely popular and widely used format in GIS appliations, web applications,
 mobile apps.  GeoJSON also serves as a baseline for the development of downstream models and
