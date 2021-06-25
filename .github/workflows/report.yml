@@ -17,7 +17,7 @@ jobs:
       uses: avattathil/asciidoctor-action@master
       with:
           program: "asciidoctor --trace -o report/wis2-metadata-search-report.html report/index.adoc"
-    - name: Deploy docs to GitHub Pages
+    - name: Deploy docs to GitHub Pages 📦
       uses: peaceiris/actions-gh-pages@v3
       with: 
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
