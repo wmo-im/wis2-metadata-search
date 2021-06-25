@@ -18,7 +18,7 @@ which has the following features:
 * Content negotiation (media types)
 * Stateless
 
-REST puts a focus on Resource Oriented Architecture (ROA).
+REST puts a focus on Resource Oriented Architecture (ROA).  In addition, resources
 
 The following standards are well positioned to meet WIS 2.0 principles, consistent with current web architecture
 and RESTful design patterns.
