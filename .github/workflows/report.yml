@@ -1,9 +1,11 @@
 name: report ⚙️
 
-on:
-  push:
-    paths:
-    - 'report/**'
+#on:
+#  push:
+#    paths:
+#    - 'report/**'
+
+on: [push]
 
 jobs:
   build:
@@ -20,6 +22,6 @@ jobs:
     - name: Deploy docs to GitHub Pages 📦
       uses: peaceiris/actions-gh-pages@v3
       with: 
-        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_branch: gh-pages
         publish_dir: ./report
