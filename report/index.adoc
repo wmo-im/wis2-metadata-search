@@ -8,7 +8,7 @@
 :lang: en
 :toc:
 :toc-placement!:
-:toclevels: 2
+:toclevels: 3
 :sectnums:
 :sectnumlevels: 4
 :sectanchors:
