@@ -18,10 +18,10 @@ jobs:
       id: adocbuild
       uses: avattathil/asciidoctor-action@master
       with:
-          program: "asciidoctor --trace -o report/index.html report/index.adoc"
+          program: "asciidoctor --trace -o index.html report/index.adoc"
     - name: Deploy docs to GitHub Pages 📦
       uses: peaceiris/actions-gh-pages@v3
       with: 
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_branch: gh-pages
-        publish_dir: ./report
+        publish_dir: ./
