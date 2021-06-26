@@ -1,0 +1,39 @@
+== WIS 2.0
+
+=== Principles
+
+WIS 2.0 puts forth the following principles (those applying to this pilot are in **bold**):
+
+* *Principle 1: WIS 2.0 adopts Web technologies and leverages industry best practices and open standards*
+* *Principle 2: WIS 2.0 uses Uniform Resource Locators (URL) to identify resources*
+* *Principle 3: WIS 2.0 prioritizes use of public telecommunications networks (i.e. Internet) when publishing digital resources*
+* *Principle 4: WIS2.0 requires provision of Web service(s) to access or interact with digital resources (e.g. data, information, products) published using WIS*
+* Principle 5: WIS 2.0 encourages NCs and DCPCs to provide 'data reduction' services via WIS that process 'big data' to create results or products that are small enough to be conveniently downloaded and used by those with minimal technical infrastructure
+* *Principle 6: WIS 2.0 will add open standard messaging protocols that use the publish-subscribe message pattern to the list of data exchange mechanisms approved for use within WIS and GTS*
+* Principle 7: WIS 2.0 will require all services that provide real-time distribution of messages to cache/store the messages for a minimum of 24-hours, and allow users to request cached messages for download
+* Principle 8: WIS 2.0 will adopt direct data exchange between provider and consumer
+* Principle 9: WIS 2.0 will phase out the use of routing tables and bulletin headers
+* *Principle 10: WIS 2.0 will provide a Catalogue containing metadata that describes both data and the service(s) provided to access that data*
+* *Principle 11: WIS 2.0 encourages data providers to publish metadata describing their data [EF1] and Web services in a way that can be indexed by commercial search engines*
+
+=== User stories
+
+As part of requirements gathering footnote:[https://github.com/wmo-im/wcmp/issues/107], the following user stories provide a
+description of features that are relevant to WIS 2.0 metadata and search, and are cast from a user perspective:
+
+* As an NWP center operator I want to quickly and easily publish information about the data that my centre provides and update it as needed in a (semi)automated way using the information that I already have in my vast databases so that I can concentrate on my core business
+* As the leader of a forecasting team of a national meteorological institution, I would like to be able to find more sources of data that might be relevant/useful for the work of my team, notably NWP and satellite imagery so that we could further improve our predictions. That should work for unprocessed outputs of a prediction model or a satellite as well as for services that offer more sophisticated access to the data, e.g. tailing
+* As an entrepreneur (start-up) that provides (wants to provide) tailored weather information I want to be able to find services (free or commercial) that provide meteorological data in a cloud or even better, provide customizable processing of such data - to be able to build my own service on top of it. And I want to be able to find out if a new such service appears or if an existing one changes its abilities so that my company can keep on advancing
+* As a software developer (working for a national met center or a private company), I would like to find a relevant technical description of the service (API) that my boss wants me to integrate with, so that the declared interoperability becomes reality
+* As a user I would like to search for real-time observations for a given time and geographical area of interest so that I can have up to date information on weather for my city
+* As a web developer I would like to access to a search API that provides easy to read documentation, examples, and a simple, intuitive RESTful API with JSON so that I can integrate into my web application quickly
+* As a GIS professional, I would like to search for weather/climate/water data from my GIS Desktop support tool so that I can integrate forecast data into my workflow
+
+The following WIS 2.0 marketing video footnote:[https://gisc.dwd.de/wis2.0/WIS_2.0_final.mp4] adds the following user stories:
+
+* As an everyday user, I would like to find easy to understand and precise weather data so that I can plan to have people over for an outdoor BBQ on a nice day
+* As a smart home owner, I would like access to frequently updated data so that I can keep my smart home monitoring up to date
+* As a weather specialist, I would like to access weather data in native data formats and subscribe to product updates, so that I can provide tailor made weather services to my users
+
+Given the above, we see a variety of users/actors to which WIS 2.0, driving the need for low barrier, ubiquitous and
+efficient discovery, visualization, access of weather/climate/water (real-time, near real-time, archive, etc.) data.

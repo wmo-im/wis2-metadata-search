@@ -1,0 +1,4 @@
+== References
+
+* OGC: OGC 20-004, OGC API - Records - Part 1: Core 1.0 (2021) footnote:[https://docs.ogc.org/DRAFTS/20-004.html]
+* IETF: RFC-7946 The GeoJSON Format (2016) footnote:[https://datatracker.ietf.org/doc/html/rfc7231]
