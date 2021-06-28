@@ -18,10 +18,10 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor --trace -o index.html report/index.adoc"
+          program: "asciidoctor --trace -o report/index.html report/index.adoc"
     - name: Deploy docs to GitHub Pages 📦
       uses: peaceiris/actions-gh-pages@v3
       with: 
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: ./
+        publish_dir: ./report
