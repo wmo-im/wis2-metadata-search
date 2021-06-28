@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Get build container
       id: adocbuild
-      uses: avattathil/asciidoctor-action@master
+      uses: tonynv/asciidoctor-action@master
       with:
           program: "asciidoctor --trace -o index.html report/index.adoc"
     - name: Deploy docs to GitHub Pages 📦
