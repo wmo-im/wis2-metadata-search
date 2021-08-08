@@ -10,9 +10,8 @@ All questions regarding this document should be directed to the editor or the co
 ^|Name  ^|Affiliation
 | Tom Kralidis (editor) | Meteorological Service of Canada (MSC)
 | Jeremy Tandy | UK Met Office
-| Chris Little | UK Met Office
 | Steve Olson | National Oceanographic and Atmospheric Administration (NOAA)
-| Chris Holmes | Planet Labs
 | Douglas Fils | Consortium for Ocean Leadership
+| MetOcean Domain Working Group | Open Geospatial Consortium
 |===
 

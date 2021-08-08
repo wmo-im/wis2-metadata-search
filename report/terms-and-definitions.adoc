@@ -66,6 +66,9 @@
 |ROA
 |Resource-oriented architecture
 
+|S3
+|Simple Storage Service
+
 |SEO
 |Search engine optimization
 

@@ -1,7 +1,7 @@
 :title: WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot: Project Report
 :titletext: {title}
 :version: 0.1.0
-:date: 2021-06-25
+:date: 2021-07-25
 :copyright: Copyright © 2021 World Meteorological Organization (WMO)
 :doctype: book
 :encoding: utf-8

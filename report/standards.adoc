@@ -18,7 +18,8 @@ which has the following features:
 * Content negotiation (media types)
 * Stateless
 
-REST puts a focus on Resource Oriented Architecture (ROA).  In addition, resources
+REST puts a focus on Resource Oriented Architecture (ROA).  In addition, resources can have numerous representations
+(raw data, webpage, etc.)depending.
 
 The following standards are well positioned to meet WIS 2.0 principles, consistent with current web architecture
 and RESTful design patterns.
@@ -68,3 +69,12 @@ The primary unit of information in OARec is the Record, which is based on GeoJSO
 ==== STAC API
 
 STAC also provides an API specification that enables search of STAC items via OpenAPI, following OGC API - Features.
+
+
+=== Considerations
+
+- WMO is conservative - it would be easier to adopt if STAC is endorsed as an OGC Community Standard
+- WMO likes stable standards; need to think about how we would manage evolution of the spec
+- WMO would likely snapshot a version of the STAC standard
+
+Recommendation: mint versions of OARec and STAC and their relevant extensions for the WIS 2.0 architecture
