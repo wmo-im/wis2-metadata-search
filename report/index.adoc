@@ -19,7 +19,7 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*World Meteorological Organization*
-|Date: {date}
+|Date: {docdate}
 |Version: {version}
 |Document location: TBD
 |Document status: DRAFT
