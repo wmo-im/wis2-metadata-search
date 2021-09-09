@@ -51,7 +51,7 @@ This project will demonstrate the following WIS 2.0 principles.
 
 - 4 *WIS 2.0: requires provision of Web service(s) to access or interact with digital resources (e.g. data, information, products) published using WIS*: the project will implement discovery as a web service (API) as well as hypermedia controls to related actionable bindable services/APIs
 
-- 6 *WIS 2.0: will add open standard messaging protocols that use the publish-subscribe message pattern to the list of data exchange mechanisms approved for use within WIS and GTS*: this project will demonstrate actionable hypermedia controls to protocols and services put forth in Demonstration project 1 (Exploring the use of message queruying protocols for GTS data exchange)
+- 6 *WIS 2.0: will add open standard messaging protocols that use the publish-subscribe message pattern to the list of data exchange mechanisms approved for use within WIS and GTS*: this project will demonstrate actionable hypermedia controls to protocols and services put forth in Demonstration project 1 (Exploring the use of message querying protocols for GTS data exchange)
 
 - 10 *WIS 2.0: will provide a catalogue containing metadata that describes both data and the service(s) provided to access that data*: this project will demonstrate OGC API - Records as an approach for cataloguing WIS metadata for data and services
 

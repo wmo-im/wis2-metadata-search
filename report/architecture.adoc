@@ -43,31 +43,32 @@ via the associated link relations.
 In order to provide a WIS 2.0 catalogue of value, it is important to clarify the granularity levels
 of which providers are to provide metadata.
 
-* discovery metadata: OARec record model
+* discovery metadata: OARec record model / STAC
 * station metadata: WIGOS Metadata Standard
 * observation metadata: OGC O&M
 
 GISC catalogues can harvest from DCPCs and/or with the following options:
+
 * harvest all metadata with clear data type identification
 * harvest only discovery metadata
 
 * datasetcollection: NWP model (OARec record metadata)
 ** dataset: NWP model output: air temperature (OARec record metadata)
-*** product options:
-**** API endpoint to interrogate the data
-**** x/y/z/t (granule) (STAC item with link to actual data asset)
+** product options:
+*** API endpoint to interrogate the data
+*** x/y/z/t (granule) (STAC Item with link to actual data asset)
 
 * datasetcollection: surface weather observations (OARec record metadata)
 ** dataset: air temperature (OARec record metadata)
-*** product options:
-**** API endpoint to interrogate the data
-**** x/y/z/t (granule) (STAC item, with link to actual data asset)
+** product options:
+*** API endpoint to interrogate the data
+*** x/y/z/t (granule) (STAC Item, with link to actual data asset)
 
 * datasetsetcollection: METAR
 ** dataset: air temperature (OARec record metadata)
-***product options:
-**** API endpoint to interrogate the data
-**** product: single message (granule) (STAC item with link to actual data asset)
+** product options:
+*** API endpoint to interrogate the data
+*** product: single message (granule) (STAC Item with link to actual data asset)
 
 ==== Publication
 
