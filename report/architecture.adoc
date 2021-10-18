@@ -49,9 +49,10 @@ metadata standard to implement for the provider.
 * station metadata: WIGOS Metadata Standard
 * observation metadata: OGC O&M
 
-Figure 1 illusrates example metadata publiciation and discovery workflows against common meteorological
-data types:
+The <<metadata-discovery-workflow>> below illustrates example metadata publiciation and discovery workflows against
+common meteorological data types:
 
+[[metadata-discovery-workflow]]
 .Discovery metadata workflow
 image::images/metadata-discovery-workflow.png[Discovery metadata workflow]
 
