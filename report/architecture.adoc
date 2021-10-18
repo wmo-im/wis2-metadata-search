@@ -38,37 +38,45 @@ as the OGC API efforts), metadata records about data will reference services rel
 In this approach, the user first finds the data they are interested in, then can bind to those services
 via the associated link relations.
 
-==== Granularity
+==== Data granularity
 
 In order to provide a WIS 2.0 catalogue of value, it is important to clarify the granularity levels
-of which providers are to provide metadata.
+of which providers are to provide metadata.  Clarifying granularity will reduce catalogue "pollution"
+and bring the user closer to the data they are looking for, as well as clarify the appropriate
+metadata standard to implement for the provider.
 
 * discovery metadata: OARec record model / STAC
 * station metadata: WIGOS Metadata Standard
 * observation metadata: OGC O&M
 
-GISC catalogues can harvest from DCPCs and/or with the following options:
+Figure 1 illusrates example metadata publiciation and discovery workflows against common meteorological
+data types:
 
-* harvest all metadata with clear data type identification
-* harvest only discovery metadata
+.Discovery metadata workflow
+image::images/metadata-discovery-workflow.png[Discovery metadata workflow]
 
-* datasetcollection: NWP model (OARec record metadata)
-** dataset: NWP model output: air temperature (OARec record metadata)
+* collection (model): NWP model (OARec record metadata).  Example: Canada GDPS
+** collection (variable): NWP model output by forecast variable (including vertical levels) (OARec record metadata).  Example: Canada GDPS air temperature
 ** product options:
-*** API endpoint to interrogate the data
+*** API endpoint to interrogate the data/variable
 *** x/y/z/t (granule) (STAC Item with link to actual data asset)
 
-* datasetcollection: surface weather observations (OARec record metadata)
-** dataset: air temperature (OARec record metadata)
+* collection (observations): surface weather observations (OARec record metadata)
+** station metadata as WIGOS metadata via WMO OSCAR/Surface
 ** product options:
 *** API endpoint to interrogate the data
 *** x/y/z/t (granule) (STAC Item, with link to actual data asset)
 
-* datasetsetcollection: METAR
-** dataset: air temperature (OARec record metadata)
+* collection (product): METAR
 ** product options:
 *** API endpoint to interrogate the data
 *** product: single message (granule) (STAC Item with link to actual data asset)
+
+
+GISC catalogues can harvest from DCPCs and/or with the following options:
+
+* harvest all metadata with clear data type identification
+* harvest only discovery metadata
 
 ==== Publication
 
