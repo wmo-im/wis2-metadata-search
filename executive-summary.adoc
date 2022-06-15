@@ -1,0 +1,17 @@
+== Executive Summary
+
+TODO
+
+=== Contributors
+
+All questions regarding this document should be directed to the editor or the contributors:
+
+|===
+^|Name  ^|Affiliation
+| Tom Kralidis (editor) | Meteorological Service of Canada (MSC)
+| Jeremy Tandy | UK Met Office
+| Steve Olson | National Oceanographic and Atmospheric Administration (NOAA)
+| Douglas Fils | Consortium for Ocean Leadership
+| MetOcean Domain Working Group | Open Geospatial Consortium
+|===
+

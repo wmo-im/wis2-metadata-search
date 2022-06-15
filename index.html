@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="copyright" content="Copyright © 2021 World Meteorological Organization (WMO)">
+<title>WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot: Project Report</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="book">
+<div id="header">
+<h1>WMO WIS 2.0 Discovery Metadata exchange, harvesting and search pilot: Project Report</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div style="page-break-after: always;"></div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2022-06-15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 0.1.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document status: DRAFT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Task Team on WIS Metadata (TT-WISMD)<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Expert Team on Metadata Standards (ET-Metadata)<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Standing Committee on Information Management and Technology (SC-IMT)<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Commission for Observation, Infrastructure and Information Systems (INFCOM)<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright © 2021 World Meteorological Organization (WMO)</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_subject">1. Subject</a></li>
+<li><a href="#_executive_summary">2. Executive Summary</a>
+<ul class="sectlevel2">
+<li><a href="#_contributors">2.1. Contributors</a></li>
+</ul>
+</li>
+<li><a href="#_references">3. References</a></li>
+<li><a href="#_terms_and_definitions">4. Terms and definitions</a>
+<ul class="sectlevel2">
+<li><a href="#_abbreviated_terms">4.1. Abbreviated terms</a></li>
+</ul>
+</li>
+<li><a href="#_introduction">5. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_objectives">5.1. Objectives</a></li>
+</ul>
+</li>
+<li><a href="#_wis_2_0">6. WIS 2.0</a>
+<ul class="sectlevel2">
+<li><a href="#_principles">6.1. Principles</a></li>
+<li><a href="#_user_stories">6.2. User stories</a></li>
+</ul>
+</li>
+<li><a href="#_standards">7. Standards</a>
+<ul class="sectlevel2">
+<li><a href="#_data">7.1. Data</a>
+<ul class="sectlevel3">
+<li><a href="#_geojson">7.1.1. GeoJSON</a></li>
+</ul>
+</li>
+<li><a href="#_metadata">7.2. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="#_stac_catalog_collection_item">7.2.1. STAC (Catalog, Collection, Item)</a></li>
+</ul>
+</li>
+<li><a href="#_apis">7.3. APIs</a>
+<ul class="sectlevel3">
+<li><a href="#_openapi">7.3.1. OpenAPI</a></li>
+<li><a href="#_ogc_api_records">7.3.2. OGC API - Records</a></li>
+<li><a href="#_stac_api">7.3.3. STAC API</a></li>
+</ul>
+</li>
+<li><a href="#_considerations">7.4. Considerations</a></li>
+</ul>
+</li>
+<li><a href="#_architecture">8. Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_considerations_2">8.1. Considerations</a>
+<ul class="sectlevel3">
+<li><a href="#_resource_oriented_architecture">8.1.1. Resource-oriented architecture</a></li>
+<li><a href="#_data_granularity">8.1.2. Data granularity</a></li>
+<li><a href="#_publication">8.1.3. Publication</a></li>
+<li><a href="#_gisc_harvesting_aggregation">8.1.4. GISC harvesting (aggregation)</a></li>
+<li><a href="#_search">8.1.5. Search</a></li>
+<li><a href="#_standards_implementation_approach">8.1.6. Standards implementation approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_revision_history">Annex A: Revision History</a></li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_subject"><a class="anchor" href="#_subject"></a>1. Subject</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The subject of this document is the WMO WIS 2.0 Discovery Metadata exchange,
+harvesting and search pilot project.  The document provides an overview of
+use cases, requirements, standards, architecture, testing and recommendations
+in support of modernizing WIS 2.0 metadata and search workflows.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_executive_summary"><a class="anchor" href="#_executive_summary"></a>2. Executive Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect2">
+<h3 id="_contributors"><a class="anchor" href="#_contributors"></a>2.1. Contributors</h3>
+<div class="paragraph">
+<p>All questions regarding this document should be directed to the editor or the contributors:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Affiliation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Tom Kralidis (editor)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Meteorological Service of Canada (MSC)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Jeremy Tandy</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">UK Met Office</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Steve Olson</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">National Oceanographic and Atmospheric Administration (NOAA)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Douglas Fils</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Consortium for Ocean Leadership</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">MetOcean Domain Working Group</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Open Geospatial Consortium</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>3. References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OGC: OGC 20-004, OGC API - Records - Part 1: Core 1.0 (2021) <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</li>
+<li>
+<p>IETF: RFC-7946 The GeoJSON Format (2016) <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_terms_and_definitions"><a class="anchor" href="#_terms_and_definitions"></a>4. Terms and definitions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_abbreviated_terms"><a class="anchor" href="#_abbreviated_terms"></a>4.1. Abbreviated terms</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Symbols and abbreviated terms</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Abbreviation</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">AMQP</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Advanced Message Queuing Protocol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">API</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Application Programming Interface</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">DCAT</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Data Catalog Vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">DCPC</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Data Collection and Production Centres</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GIS</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Geographic Information System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GISC</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Global Information System Centre</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">GTS</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Global Telecommunication System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">HTML</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Hypertext Markup Language</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Hypertext Transfer Protocol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Hypertext Transfer Protocol Secure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ISO</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internatioal Organization for Standardization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">JavaScript Object Notation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">MQTT</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Message Queuing Telemetry Transport</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">NC</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">National Centre</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">NWP</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Numerical Weather Prediction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">OAI-PMH</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Open Archives Initiative Protocol for Metadata Harvesting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">OARec</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">OGC API - Records</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">OGC</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Open Geospatial Consortium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">REST</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Representational State Transfer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ROA</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Resource-oriented architecture</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">S3</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Simple Storage Service</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">SEO</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Search engine optimization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">SOA</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Service-oriented architecture</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">SRU</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Search/Retrieval via URL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">STAC</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">SpatioTemporal Asset Catalog</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">URL</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Uniform Resource Locator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">W3C</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">World Wide Web Consortium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">WCMP</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">WMO Core Metadata Profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">WIS</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">WMO Information System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">WMO</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">World Meteorological Organization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">XML</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">eXtensible Markup Language</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>5. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WIS 1.0 discovery is primarily comprised of WMO Core Metadata Profile, OAI-PMH for harvesting and SRU for search.</p>
+</div>
+<div class="paragraph">
+<p>Current realities of the interfaces and encodings include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>use of XML for metadata description and utilization in web applications</p>
+</li>
+<li>
+<p>based on an era of service-oriented architecture</p>
+</li>
+<li>
+<p>overloading of web architecture principles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>using HTTP as a tunnel</p>
+</li>
+<li>
+<p>little to no use of HTTP status codes</p>
+</li>
+<li>
+<p>large, monolithic standards and systems</p>
+</li>
+<li>
+<p>not "of the web" or "webby"</p>
+</li>
+<li>
+<p>challenging for web developers to implement</p>
+</li>
+<li>
+<p>challenging for mass market integration (search engine optimization)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As a result, WIS and weather/climate/water data and services related to discovery and search should be improved to take advantage of current approaches and opportunities.</p>
+</div>
+<div class="paragraph">
+<p>Weather/climate/water data is by nature geospatial, and temporal.  The W3C Data on the Web Best Practices <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup> and Spatial Data on the Web Best Practices <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup> provide guidelines on how to best enable spatiotemporal data to lower the barrier for users, search engine optimization and linked data.</p>
+</div>
+<div class="paragraph">
+<p>The current evolution in data exchange standards, systems and architecture are grounded in the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Resource-oriented architecture (ROA)</p>
+</li>
+<li>
+<p>Representational State Transfer (REST)</p>
+</li>
+<li>
+<p>JSON and HTML as core web formats</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Following this trend is the current evolution of OGC interface standards via OGC API <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>, which are a clean break against legacy standards, and implement APIs using core, broad industry approaches (W3C, OpenAPI, JSON, etc.).</p>
+</div>
+<div class="paragraph">
+<p>OGC APIs are designed to be web developer friendly and are being developed with a minimal core and extension mechanism.  Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Service-oriented: <span class="line-through"><code>/api?request=GetFeature&amp;typename=roads&amp;featureid=5</code></span></p>
+</li>
+<li>
+<p>Resource-oriented: <code>/api/collections/roads/items/5</code></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_objectives"><a class="anchor" href="#_objectives"></a>5.1. Objectives</h3>
+<div class="paragraph">
+<p>This project aims to experiment implementing WMO discovery metadata using the OGC API - Records draft standard. This project will also experiment actionable linkages with demonstration project 1 (AMQP/MQTT), search/access of collections of variables of NWP data, as well as enabling search capability against WIS 2.0 topics.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wis_2_0"><a class="anchor" href="#_wis_2_0"></a>6. WIS 2.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_principles"><a class="anchor" href="#_principles"></a>6.1. Principles</h3>
+<div class="paragraph">
+<p>WIS 2.0 puts forth the following principles (those applying to this pilot are in <strong>bold</strong>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Principle 1: WIS 2.0 adopts Web technologies and leverages industry best practices and open standards</strong></p>
+</li>
+<li>
+<p><strong>Principle 2: WIS 2.0 uses Uniform Resource Locators (URL) to identify resources</strong></p>
+</li>
+<li>
+<p><strong>Principle 3: WIS 2.0 prioritizes use of public telecommunications networks (i.e. Internet) when publishing digital resources</strong></p>
+</li>
+<li>
+<p><strong>Principle 4: WIS2.0 requires provision of Web service(s) to access or interact with digital resources (e.g. data, information, products) published using WIS</strong></p>
+</li>
+<li>
+<p>Principle 5: WIS 2.0 encourages NCs and DCPCs to provide 'data reduction' services via WIS that process 'big data' to create results or products that are small enough to be conveniently downloaded and used by those with minimal technical infrastructure</p>
+</li>
+<li>
+<p><strong>Principle 6: WIS 2.0 will add open standard messaging protocols that use the publish-subscribe message pattern to the list of data exchange mechanisms approved for use within WIS and GTS</strong></p>
+</li>
+<li>
+<p>Principle 7: WIS 2.0 will require all services that provide real-time distribution of messages to cache/store the messages for a minimum of 24-hours, and allow users to request cached messages for download</p>
+</li>
+<li>
+<p>Principle 8: WIS 2.0 will adopt direct data exchange between provider and consumer</p>
+</li>
+<li>
+<p>Principle 9: WIS 2.0 will phase out the use of routing tables and bulletin headers</p>
+</li>
+<li>
+<p><strong>Principle 10: WIS 2.0 will provide a Catalogue containing metadata that describes both data and the service(s) provided to access that data</strong></p>
+</li>
+<li>
+<p><strong>Principle 11: WIS 2.0 encourages data providers to publish metadata describing their data [EF1] and Web services in a way that can be indexed by commercial search engines</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_stories"><a class="anchor" href="#_user_stories"></a>6.2. User stories</h3>
+<div class="paragraph">
+<p>As part of requirements gathering <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>, the following user stories provide a
+description of features that are relevant to WIS 2.0 metadata and search, and are cast from a user perspective:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As an NWP center operator I want to quickly and easily publish information about the data that my centre provides and update it as needed in a (semi)automated way using the information that I already have in my vast databases so that I can concentrate on my core business</p>
+</li>
+<li>
+<p>As the leader of a forecasting team of a national meteorological institution, I would like to be able to find more sources of data that might be relevant/useful for the work of my team, notably NWP and satellite imagery so that we could further improve our predictions. That should work for unprocessed outputs of a prediction model or a satellite as well as for services that offer more sophisticated access to the data, e.g. tailing</p>
+</li>
+<li>
+<p>As an entrepreneur (start-up) that provides (wants to provide) tailored weather information I want to be able to find services (free or commercial) that provide meteorological data in a cloud or even better, provide customizable processing of such data - to be able to build my own service on top of it. And I want to be able to find out if a new such service appears or if an existing one changes its abilities so that my company can keep on advancing</p>
+</li>
+<li>
+<p>As a software developer (working for a national met center or a private company), I would like to find a relevant technical description of the service (API) that my boss wants me to integrate with, so that the declared interoperability becomes reality</p>
+</li>
+<li>
+<p>As a user I would like to search for real-time observations for a given time and geographical area of interest so that I can have up to date information on weather for my city</p>
+</li>
+<li>
+<p>As a web developer I would like to access to a search API that provides easy to read documentation, examples, and a simple, intuitive RESTful API with JSON so that I can integrate into my web application quickly</p>
+</li>
+<li>
+<p>As a GIS professional, I would like to search for weather/climate/water data from my GIS Desktop support tool so that I can integrate forecast data into my workflow</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following WIS 2.0 marketing video <sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup> adds the following user stories:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As an everyday user, I would like to find easy to understand and precise weather data so that I can plan to have people over for an outdoor BBQ on a nice day</p>
+</li>
+<li>
+<p>As a smart home owner, I would like access to frequently updated data so that I can keep my smart home monitoring up to date</p>
+</li>
+<li>
+<p>As a weather specialist, I would like to access weather data in native data formats and subscribe to product updates, so that I can provide tailor made weather services to my users</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given the above, we see a variety of users/actors to which WIS 2.0, driving the need for low barrier, ubiquitous and
+efficient discovery, visualization, access of weather/climate/water (real-time, near real-time, archive, etc.) data.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standards"><a class="anchor" href="#_standards"></a>7. Standards</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The standards put forth in this pilot are a clean break from WIS 1.0 standards (OAI-PMH, SRU, ISO 19115/19139)
+in order to lower the barrier to entry/implementation for a vast range of users/actors.  The WIS 1.0 standards
+for search and metadata, applying a Service-Oriented Architecture (SOA), while applicable for their purpose at
+the time, present the following challenges in current web architecture:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>complex machinery and service provisioning is required for crawling/traversing resources</p>
+</li>
+<li>
+<p>challenging for web developers to implement</p>
+</li>
+<li>
+<p>challenging for mainstream Web integration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Current web architecture is primarily rooted in Representational State Transfer (REST) <sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup>
+which has the following features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HTTP verbs (GET/PUT/POST/DELETE/OPTIONS/PATCH)</p>
+</li>
+<li>
+<p>HTTP status codes (200, 201, 404, etc.)</p>
+</li>
+<li>
+<p>URIs to identify resources</p>
+</li>
+<li>
+<p>Content negotiation (media types)</p>
+</li>
+<li>
+<p>Stateless</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>REST puts a focus on Resource Oriented Architecture (ROA).  In addition, resources can have numerous representations
+(raw data, webpage, etc.)depending.</p>
+</div>
+<div class="paragraph">
+<p>The following standards are well positioned to meet WIS 2.0 principles, consistent with current web architecture
+and RESTful design patterns.</p>
+</div>
+<div class="sect2">
+<h3 id="_data"><a class="anchor" href="#_data"></a>7.1. Data</h3>
+<div class="paragraph">
+<p>Although this pilot is primarily focused on discovery metadata, it is important to outline core baseline
+standards that are used and / or extended throughout this pilot.</p>
+</div>
+<div class="sect3">
+<h4 id="_geojson"><a class="anchor" href="#_geojson"></a>7.1.1. GeoJSON</h4>
+<div class="paragraph">
+<p>GeoJSON (RFC 7946 <sup class="footnote">[<a id="_footnoteref_13" class="footnote" href="#_footnotedef_13" title="View footnote.">13</a>]</sup>) is a format for
+encoding a variety of geographic data structures <sup class="footnote">[<a id="_footnoteref_14" class="footnote" href="#_footnotedef_14" title="View footnote.">14</a>]</sup>.  In the
+geospatial community, GeoJSON typically represents vector (or feature) data.  GeoJSON is a dialect
+of JSON <sup class="footnote">[<a id="_footnoteref_15" class="footnote" href="#_footnotedef_15" title="View footnote.">15</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>GeoJSON is an extremely popular and widely used format in GIS appliations, web applications,
+mobile apps.  GeoJSON also serves as a baseline for the development of downstream models and
+extensions, as described below.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_metadata"><a class="anchor" href="#_metadata"></a>7.2. Metadata</h3>
+<div class="sect3">
+<h4 id="_stac_catalog_collection_item"><a class="anchor" href="#_stac_catalog_collection_item"></a>7.2.1. STAC (Catalog, Collection, Item)</h4>
+<div class="paragraph">
+<p>The SpatioTemporal Asset Catalog (STAC) <sup class="footnote">[<a id="_footnoteref_16" class="footnote" href="#_footnotedef_16" title="View footnote.">16</a>]</sup> specification provides a common language to describe a range of geospatial information, so it can more easily be indexed and discovered. A 'spatiotemporal asset' is any file that represents information about the earth captured in a certain space and time.</p>
+</div>
+<div class="paragraph">
+<p>The core STAC specification provides the following metadata models:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Item: the lowest granularity of STAC metadata (we can imagine metadata about a single file)</p>
+</li>
+<li>
+<p>Catalog: a list of Items or child Catalogs</p>
+</li>
+<li>
+<p>Collection: collection level metadata</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_apis"><a class="anchor" href="#_apis"></a>7.3. APIs</h3>
+<div class="sect3">
+<h4 id="_openapi"><a class="anchor" href="#_openapi"></a>7.3.1. OpenAPI</h4>
+<div class="paragraph">
+<p>The OpenAPI Specification (OAS) defines a standard, programming language-agnostic interface description for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic. When properly defined via OpenAPI, a consumer can understand and interact with the remote service with a minimal amount of implementation logic. Similar to what interface descriptions have done for lower-level programming, the OpenAPI Specification removes guesswork in calling a service <sup class="footnote">[<a id="_footnoteref_17" class="footnote" href="#_footnotedef_17" title="View footnote.">17</a>]</sup>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ogc_api_records"><a class="anchor" href="#_ogc_api_records"></a>7.3.2. OGC API - Records</h4>
+<div class="paragraph">
+<p>OGC API - Records <sup class="footnote">[<a id="_footnoteref_18" class="footnote" href="#_footnotedef_18" title="View footnote.">18</a>]</sup> (OARec) offers the capability to create, modify, and query metadata on the Web. The draft specification enables the discovery of geospatial resources by standardizing the way collections of descriptive information about the resources (metadata) are exposed. The draft specification also enables the discovery and sharing of related resources that may be referenced from geospatial resources or their metadata by standardizing the way all kinds of records are exposed and managed.</p>
+</div>
+<div class="paragraph">
+<p>Consistent with all OGC API standards, OARec will provide core and extension functionality, to allow for modular specification development.</p>
+</div>
+<div class="paragraph">
+<p>The primary unit of information in OARec is the Record, which is based on GeoJSON and provides a set of properties informed by catalogue schemas in earlier OGC CSW specifications and DCAT.  The OARec Record is extensible and can be profiled.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_stac_api"><a class="anchor" href="#_stac_api"></a>7.3.3. STAC API</h4>
+<div class="paragraph">
+<p>STAC also provides an API specification that enables search of STAC items via OpenAPI, following OGC API - Features.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_considerations"><a class="anchor" href="#_considerations"></a>7.4. Considerations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>WMO is conservative - it would be easier to adopt if STAC is endorsed as an OGC Community Standard</p>
+</li>
+<li>
+<p>WMO likes stable standards; need to think about how we would manage evolution of the spec</p>
+</li>
+<li>
+<p>WMO would likely snapshot a version of the STAC standard</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Recommendation: mint versions of OARec and STAC and their relevant extensions for the WIS 2.0 architecture</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>8. Architecture</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_considerations_2"><a class="anchor" href="#_considerations_2"></a>8.1. Considerations</h3>
+<div class="paragraph">
+<p>Given the WIS 2.0 principles, requirements, standards and current design patterns, the following
+describes envisioned workflows of WIS 2.0 in the context of metadata search and harvesting.</p>
+</div>
+<div class="paragraph">
+<p>We consider the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>flexible metadata publishing mechanisms: providers need to be able to publish discovery metadata
+in the easiest and most efficient way possible</p>
+</li>
+<li>
+<p>basic, HTTPS crawlable metadata files (filesystem, object storage).  For example, publishing
+discovery metadata as JSON files to an S3 bucket, and then making that bucket available for
+harvesting and traversal to search engines and metadata harvesters</p>
+</li>
+<li>
+<p>the browser as the catalogue: here, browsers utilize mass market search engines as the gateway
+to low barrier discovery.  This pattern works without a dedicated WIS catalogue per se, and also
+means discovery metadata would not need to be duplicated/harvested across each GISC, with the idea
+that search engines will harvest from the closest point to the authoritative source</p>
+</li>
+<li>
+<p>the canonical WIS catalogue: given WIS 2.0 will not (and should not!) control or enforce search
+engine behaviour, there is a need to provide a resource discovery experience without the various
+intricacies or "value add" typically provided by search engines.  Hence a canonical WIS 2.0
+Catalogue will be recognized by WMO, approved by permanent representatives (PRs).  The canonical
+WIS 2.0 Catalogue would provide a search API and metadata encodings consistent with the standards
+described in <a href="#_standards">Standards</a>, and thereby can equally be harvested by search engines just the same.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The main difference between the above options is whether providers publish descriptions of resources
+via basic methods or APIs.</p>
+</div>
+<div class="paragraph">
+<p>In either option, providing HTML will facilitate search engine integration, while lower level encodings/formats
+will facilitate machine to machine workflow.  In addition, either option will be required for NCs and
+DCPCs to publish their discvovery metadata for GISCs to harvest into the canonical WIS Catalogue.</p>
+</div>
+<div class="sect3">
+<h4 id="_resource_oriented_architecture"><a class="anchor" href="#_resource_oriented_architecture"></a>8.1.1. Resource-oriented architecture</h4>
+<div class="paragraph">
+<p>In alignment with RESTful patterns, it is important to note that data is the "first class citizen".
+Operations on the data (e.g. services/APIs) are secondary. Following standards-based practices (such
+as the OGC API efforts), metadata records about data will reference services related to those data.
+In this approach, the user first finds the data they are interested in, then can bind to those services
+via the associated link relations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_data_granularity"><a class="anchor" href="#_data_granularity"></a>8.1.2. Data granularity</h4>
+<div class="paragraph">
+<p>In order to provide a WIS 2.0 catalogue of value, it is important to clarify the granularity levels
+of which providers are to provide metadata.  Clarifying granularity will reduce catalogue "pollution"
+and bring the user closer to the data they are looking for, as well as clarify the appropriate
+metadata standard to implement for the provider.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>discovery metadata: OARec record model / STAC</p>
+</li>
+<li>
+<p>station metadata: WIGOS Metadata Standard</p>
+</li>
+<li>
+<p>observation metadata: OGC O&amp;M</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <a href="#metadata-discovery-workflow">Discovery metadata workflow</a> below illustrates example metadata publiciation and discovery workflows against
+common meteorological data types:</p>
+</div>
+<div id="metadata-discovery-workflow" class="imageblock">
+<div class="content">
+<img src="images/metadata-discovery-workflow.png" alt="Discovery metadata workflow">
+</div>
+<div class="title">Figure 1. Discovery metadata workflow</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>collection (model): NWP model (OARec record metadata).  Example: Canada GDPS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>collection (variable): NWP model output by forecast variable (including vertical levels) (OARec record metadata).  Example: Canada GDPS air temperature</p>
+</li>
+<li>
+<p>product options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>API endpoint to interrogate the data/variable</p>
+</li>
+<li>
+<p>x/y/z/t (granule) (STAC Item with link to actual data asset)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>collection (observations): surface weather observations (OARec record metadata)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>station metadata as WIGOS metadata via WMO OSCAR/Surface</p>
+</li>
+<li>
+<p>product options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>API endpoint to interrogate the data</p>
+</li>
+<li>
+<p>x/y/z/t (granule) (STAC Item, with link to actual data asset)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>collection (product): METAR</p>
+<div class="ulist">
+<ul>
+<li>
+<p>product options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>API endpoint to interrogate the data</p>
+</li>
+<li>
+<p>product: single message (granule) (STAC Item with link to actual data asset)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>GISC catalogues can harvest from DCPCs and/or with the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>harvest all metadata with clear data type identification</p>
+</li>
+<li>
+<p>harvest only discovery metadata</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_publication"><a class="anchor" href="#_publication"></a>8.1.3. Publication</h4>
+<div class="paragraph">
+<p>Discovery metadata publishing can be provided via two approaches: a static catalogue or
+API provisioning.  In both cases, the metadata model and content are identical, but the
+means to access and interrogate the metadata vary as described below.</p>
+</div>
+<div class="sect4">
+<h5 id="_static_catalogue_publication"><a class="anchor" href="#_static_catalogue_publication"></a>8.1.3.1. Static catalogue publication</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>provide discovery metadata as basic, HTTPS crawelable metadata files (filesystem, object
+storage).  For example, publishing discovery metadata as JSON files to an S3 bucket, and
+then making that bucket available for harvesting and traversal to search engines and
+metadata harvesters</p>
+</li>
+<li>
+<p>optionally provide lower granularity metadata (i.e. products) in JSON for traversal</p>
+</li>
+<li>
+<p>optionally augment all metadata by providing alternate representations in HTML with SEO constructs
+such as schema.org <sup class="footnote">[<a id="_footnoteref_19" class="footnote" href="#_footnotedef_19" title="View footnote.">19</a>]</sup> and/or JSON-LD <sup class="footnote">[<a id="_footnoteref_20" class="footnote" href="#_footnotedef_20" title="View footnote.">20</a>]</sup></p>
+</li>
+<li>
+<p>register a basic catalogue landing page to GISC for harvest/ingest</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_api_provisioning"><a class="anchor" href="#_api_provisioning"></a>8.1.3.2. API provisioning</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>provide discovery metadata in JSON</p>
+</li>
+<li>
+<p>make discovery metadata available via search API, providing predicates on which to query and
+filter metadata collections</p>
+</li>
+<li>
+<p>register API landing page to GISC for harvest/ingest</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gisc_harvesting_aggregation"><a class="anchor" href="#_gisc_harvesting_aggregation"></a>8.1.4. GISC harvesting (aggregation)</h4>
+<div class="paragraph">
+<p>In either case, GISCs could support push or pull mechanisms for metadata ingest/harvesting:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>pull: traversing the catalogue or API resources and ingest metadata into the GISC local catalogue</p>
+</li>
+<li>
+<p>push: subscribe to a given NC/DCPC for notifications of resource updates</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We also have to consider harvesting depth (hops) as an option for providers to specify when registering
+their resource catalogues to a GISC.</p>
+</div>
+<div class="paragraph">
+<p>The primary means of GISC harvesting would be via OARec (API) or basic catalogue crawling.  A third option
+is possible subject to locally agreed upon arrangements between providers and GISCs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_search"><a class="anchor" href="#_search"></a>8.1.5. Search</h4>
+<div class="paragraph">
+<p>GISCs will provide an OARec endpoint to enable users to search all content provided by the local GISC or
+content from other GISCs.  The aggregation will facilitate a fulsome search of all WIS 2.0 resources as
+harvested by/between given GISCs.</p>
+</div>
+<div class="paragraph">
+<p>There is another option to consider: distributed search.  Here, metadata stays with each relevant GISC
+and search requests perform realtime searches against remote GISCs.  While this results in simplified
+metadata management, it also presents issues concerning network latency/failure, as well as providing
+meaningful sets of search results (each GISC would potentially have various relevance algorithms depending
+on their Catalogue tooling or backend database or document store).  This requires further discussion.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_standards_implementation_approach"><a class="anchor" href="#_standards_implementation_approach"></a>8.1.6. Standards implementation approach</h4>
+<div class="paragraph">
+<p>#include::testing.adoc[]
+#include::results.adoc[]
+#include::discussion.adoc[]
+#include::conclusion.adoc[]</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Annex A: Revision History</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 18%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 46%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Date</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Release</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Editor</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Primary clauses modified</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2021-06-23</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Template</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Tom Kralidis</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">initial template</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>#include::annex-b-bibiography.adoc[]</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-officers/infcom-management-group/standing-committee-information-management-and-technology-sc-imt/expert-team-metadata-0" class="bare">https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-officers/infcom-management-group/standing-committee-information-management-and-technology-sc-imt/expert-team-metadata-0</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-national-representatives/infcom-management-group/standing-committee-information-management-and-technology-sc-imt/et-metadata" class="bare">https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-national-representatives/infcom-management-group/standing-committee-information-management-and-technology-sc-imt/et-metadata</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-officers/infcom-management-group/standing-committee-information-management-and-technology-sc-imt" class="bare">https://community.wmo.int/governance/commission-membership/commission-observation-infrastructures-and-information-systems-infcom/commission-infrastructure-officers/infcom-management-group/standing-committee-information-management-and-technology-sc-imt</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://community.wmo.int/governance/commission-membership/infcom" class="bare">https://community.wmo.int/governance/commission-membership/infcom</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://docs.ogc.org/DRAFTS/20-004.html" class="bare">https://docs.ogc.org/DRAFTS/20-004.html</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="https://datatracker.ietf.org/doc/html/rfc7231" class="bare">https://datatracker.ietf.org/doc/html/rfc7231</a>
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. <a href="https://www.w3.org/TR/dwbp" class="bare">https://www.w3.org/TR/dwbp</a>
+</div>
+<div class="footnote" id="_footnotedef_8">
+<a href="#_footnoteref_8">8</a>. <a href="https://www.w3.org/TR/sdw-bp" class="bare">https://www.w3.org/TR/sdw-bp</a>
+</div>
+<div class="footnote" id="_footnotedef_9">
+<a href="#_footnoteref_9">9</a>. <a href="https://ogcapi.org" class="bare">https://ogcapi.org</a>
+</div>
+<div class="footnote" id="_footnotedef_10">
+<a href="#_footnoteref_10">10</a>. <a href="https://github.com/wmo-im/wcmp/issues/107" class="bare">https://github.com/wmo-im/wcmp/issues/107</a>
+</div>
+<div class="footnote" id="_footnotedef_11">
+<a href="#_footnoteref_11">11</a>. <a href="https://gisc.dwd.de/wis2.0/WIS_2.0_final.mp4" class="bare">https://gisc.dwd.de/wis2.0/WIS_2.0_final.mp4</a>
+</div>
+<div class="footnote" id="_footnotedef_12">
+<a href="#_footnoteref_12">12</a>. <a href="https://datatracker.ietf.org/doc/html/rfc7231" class="bare">https://datatracker.ietf.org/doc/html/rfc7231</a>
+</div>
+<div class="footnote" id="_footnotedef_13">
+<a href="#_footnoteref_13">13</a>. <a href="https://datatracker.ietf.org/doc/html/rfc7946" class="bare">https://datatracker.ietf.org/doc/html/rfc7946</a>
+</div>
+<div class="footnote" id="_footnotedef_14">
+<a href="#_footnoteref_14">14</a>. <a href="https://geojson.org" class="bare">https://geojson.org</a>
+</div>
+<div class="footnote" id="_footnotedef_15">
+<a href="#_footnoteref_15">15</a>. <a href="https://www.json.org" class="bare">https://www.json.org</a>
+</div>
+<div class="footnote" id="_footnotedef_16">
+<a href="#_footnoteref_16">16</a>. <a href="https://stacspec.org" class="bare">https://stacspec.org</a>
+</div>
+<div class="footnote" id="_footnotedef_17">
+<a href="#_footnoteref_17">17</a>. <a href="https://www.openapis.org" class="bare">https://www.openapis.org</a>
+</div>
+<div class="footnote" id="_footnotedef_18">
+<a href="#_footnoteref_18">18</a>. <a href="https://ogcapi.ogc.org/records" class="bare">https://ogcapi.ogc.org/records</a>
+</div>
+<div class="footnote" id="_footnotedef_19">
+<a href="#_footnoteref_19">19</a>. <a href="https://schemas.org" class="bare">https://schemas.org</a>
+</div>
+<div class="footnote" id="_footnotedef_20">
+<a href="#_footnoteref_20">20</a>. <a href="https://json-ld.org" class="bare">https://json-ld.org</a>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-06-15 12:37:43 UTC
+</div>
+</div>
+</body>
+</html>
